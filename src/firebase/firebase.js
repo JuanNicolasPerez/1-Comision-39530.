@@ -3,8 +3,7 @@ import { getFirestore, collection, doc, addDoc, getDoc, getDocs, updateDoc, dele
 
 
 const firebaseConfig = {
-    // process.env.API_KEY,
-    apiKey: "AIzaSyADOc_ylzJ_gSulMg938bb_5vW9DNjQ_Ds",
+    apiKey: process.env.API_KEY,
     authDomain: "proyecto-juannicolasperez.firebaseapp.com",
     projectId: "proyecto-juannicolasperez",
     storageBucket: "proyecto-juannicolasperez.appspot.com",
