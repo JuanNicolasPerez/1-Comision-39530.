@@ -1,0 +1,42 @@
+.cardProducto{
+    width: 18rem;
+    margin: 10px;
+    background-color: rgb(245, 227, 227);
+}
+.card-body{
+    text-align: center;
+}
+
+.cardProductos{
+    margin: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.itemDetail{
+    max-width: 540px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.img-detail{
+    margin-top: 40px;
+    margin-left: 5px;
+}
+.cardBody{
+    text-align: center;
+}
+
+.btn-comprar{
+    margin: 8px;
+}
+
+.card-img-top {
+    margin: auto;
+    width: 220px;
+    height: 250px;
+}
+
+.darkMode {
+    background-color: rgb(173, 197, 201);
+    color: rgb(196, 151, 151);
+}
