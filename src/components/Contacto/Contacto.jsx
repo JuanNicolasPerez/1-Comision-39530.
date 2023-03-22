@@ -1,6 +1,11 @@
 import { useForm } from "../../hooks/useForm"
 
+//Context
+import { useDarkModeContext } from '../../context/DarkModeContext';
+
 export const Contacto = () => {
+
+    const { darkMode } = useDarkModeContext()
 
     const initialData = {
         nombre: '',
@@ -45,25 +50,39 @@ export const Contacto = () => {
     const { form, errors, loading, handleChange, handleSubmit } = useForm(initialData, onValidate)
 
     return (
-        <form className='w-100' onSubmit={handleSubmit}>
-            <label className='form-label'>Nombre</label>
-            <input type="text" className='form-control' name="nombre" value={form.nombre} onChange={handleChange} />
-            {errors.nombre && <div className="alert alert-danger p-1">{errors.nombre}</div>}
+        <div className={`contacto container  style={{marginTop:"20px"}}  ${darkMode ? '' : 'bodyItemDetailDark'}              `}   >
 
-            <label className='form-label'>Correo electrónico</label>
-            <input type="email" className='form-control' name="correo" value={form.correo} onChange={handleChange} />
-            {errors.correo && <div className="alert alert-danger p-1">{errors.correo}</div>}
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label className='form-label'>Nombre</label>
+                    <input type="text" className='form-control' name="nombre" value={form.nombre} onChange={handleChange} />
+                    {errors.nombre && <div className="alert alert-danger p-1">{errors.nombre}</div>}
+                </div>
 
-            <label className='form-label'>Asunto</label>
-            <input type="text" className='form-control' name="asunto" value={form.asunto} onChange={handleChange} />
-            {errors.asunto && <div className="alert alert-danger p-1">{errors.asunto}</div>}
+                <div className="mb-3">
+                    <label className='form-label'>Correo electrónico</label>
+                    <input type="email" className='form-control' name="correo" value={form.correo} onChange={handleChange} />
+                    {errors.correo && <div className="alert alert-danger p-1">{errors.correo}</div>}
+                </div>
 
-            <label className='form-label'>Mensaje</label>
-            <textarea className='form-control' name="mensaje" value={form.mensaje} onChange={handleChange} />
-            {errors.mensaje && <div className="alert alert-danger p-1">{errors.mensaje}</div>}
+                <div className="mb-3">
+                    <label className='form-label'>Asunto</label>
+                    <input type="text" className='form-control' name="asunto" value={form.asunto} onChange={handleChange} />
+                    {errors.asunto && <div className="alert alert-danger p-1">{errors.asunto}</div>}
+                </div>
 
-            <button className='btn btn-warning mt-1 w-100' disabled={loading}>{loading ? "Enviando..." : "Enviar"}</button>
-        </form>
+                <div className="mb-3">
+                    <label className='form-label'>Mensaje</label>
+                    <textarea className='form-control' name="mensaje" value={form.mensaje} onChange={handleChange} />
+                    {errors.mensaje && <div className="alert alert-danger p-1">{errors.mensaje}</div>}
+                </div>
+
+                <div className="boton_contacto mb-3 m-0">
+                    <button className="btn btn-primary" disabled={loading}>{loading ? "Enviando..." : "Enviar"}</button>
+                </div>
+            </form>
+        </div>
+
     )
 }
 

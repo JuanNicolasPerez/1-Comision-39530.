@@ -19,6 +19,7 @@ import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer';
 import { Contacto } from './Contacto/Contacto';
 import { Cart } from './Cart/Cart';
 import { Checkout } from './Checkout/Checkout';
+import { Footer } from './Footer/Footer';
 
 function App() {
 
@@ -34,12 +35,15 @@ function App() {
               <Route path='/category/:idCategoria' element={<ItemListContainer />} />
               <Route path='/contacto' element={<Contacto />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<Checkout/>}/>
-              </Routes>
+              <Route path='/checkout' element={<Checkout />} />
+            </Routes>
+            
             <ToastContainer />
           </DarkModeProvider>
         </CarritoProvider>
+        
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

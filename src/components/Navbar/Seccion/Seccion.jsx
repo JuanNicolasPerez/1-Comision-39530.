@@ -4,10 +4,10 @@ const Seccion = () => {
     return (
         <>
             <li className="nav-item">
-                <Link className="nav-link" to={"/"}><button className="btn">Inicio</button></Link>
+                <Link className="nav-link" to={"/"}><button className="btn btn_seccion">Inicio</button></Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" to={"/Contacto"}><button className="btn">Contacto</button></Link>
+                <Link className="nav-link" to={"/Contacto"}><button className="btn btn_seccion">Contacto</button></Link>
             </li>
         </>
     );

@@ -2,11 +2,9 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
 // context
-import { useDarkModeContext } from '../../context/DarkModeContext'
 import { useCarritoContext } from '../../context/CarritoContext'
 
 export const ItemDetail = ({ item }) => {
-    const { darkMode } = useDarkModeContext()
     const { addItem } = useCarritoContext()
 
     const onAdd = (cantidad) => { //Agregar el producto al carrito
@@ -14,11 +12,11 @@ export const ItemDetail = ({ item }) => {
     }
 
     return (
-        <div className='row g-0'>
-            <div className='col-md-4'>
+        <div className='contenedor_Produc row g-0'>
+            <div className='conten_img_detail col-md-6'>
                 <img src={item.img} className="img-fluid img-detail" alt={`Imagen de ${item.nombre}`} />
             </div>
-            <div className='col-md-8'>
+            <div className='col-md-6'>
                 <div className='cardBody'>
                     <h5 className='card-title'>{item.nombre}</h5>
                     <p className='card-text'>Categoria: {item.rubro}</p>
@@ -27,7 +25,7 @@ export const ItemDetail = ({ item }) => {
                     
                     <ItemCount valInicial={1} stock={item.cantidad} onAdd={onAdd} />
                     
-                    <div className='btn-comprar'>
+                    <div className='btn_finl_compra btn-comprar'>
                         <Link className='nav-link' to={"/cart"}>
                             <button className='btn btn-secondary'>Finalizar Compra</button>
                         </Link>
